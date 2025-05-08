@@ -10,5 +10,5 @@ services:
     volumes:
       - /dev/shm:/dev/shm
       - ./custom_models:/root/custom_models
-    command: /bin/bash
+    command: /root/entrypoint.sh
     tty: true
