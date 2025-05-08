@@ -1,5 +1,5 @@
 services:
-  espnet:
+  coqui:
     build: .
     container_name: coqui-tts
     runtime: nvidia
