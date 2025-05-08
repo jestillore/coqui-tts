@@ -1,0 +1,14 @@
+services:
+  espnet:
+    build: .
+    container_name: coqui-tts
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
+    volumes:
+      - /dev/shm:/dev/shm
+      - ./custom_models:/root/custom_models
+    command: /bin/bash
+    tty: true

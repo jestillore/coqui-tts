@@ -12,8 +12,9 @@ RUN rm -rf /root/.cache/pip
 # Copy TTS repository contents:
 WORKDIR /root
 COPY . /root
+RUN chmod +x entrypoint.sh
 
 RUN make install
 
-ENTRYPOINT ["tts"]
-CMD ["--help"]
+#ENTRYPOINT ["tts"]
+#CMD ["--help"]
